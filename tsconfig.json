@@ -19,12 +19,15 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
+    "types": ["vite/client"],
     "baseUrl": ".",
     "paths": {
-      "@/*": ["src/*"],
-      "@@/*": ["src/.vit/*"]
+      "@/model/*": ["./src/model/*"],
+      "@/shared/*": ["./src/shared/*"],
+      "@/services/*": ["./src/services/*"],
+      "@/pocketbase": ["./src/pocketbase.ts"]
     }
   },
-  "include": ["src", "*.ts"]
-  //"references": [{ "path": "./tsconfig.node.json" }]
+  "include": ["src", "*.ts"],
+  "references": [{ "path": "./tsconfig.node.json" }]
 }
