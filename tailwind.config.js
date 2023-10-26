@@ -5,7 +5,9 @@ export default {
     './src/**/*.{ts,tsx,js,jsx}',
   ],
   theme: {
-    extend: {},
+    extend: {
+      animation: ['group-hover'],
+    },
   },
   plugins: [
     forms()
