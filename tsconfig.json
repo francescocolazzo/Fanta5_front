@@ -23,7 +23,7 @@
     "baseUrl": ".",
     "paths": {
       "@/model/*": ["./src/model/*"],
-      "@/shared/*": ["./src/shared/*"],
+      "@/shared": ["./src/shared/index"],
       "@/services/*": ["./src/services/*"],
       "@/pocketbase": ["./src/pocketbase.ts"]
     }

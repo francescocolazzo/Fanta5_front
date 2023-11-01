@@ -73,6 +73,10 @@ input[type="email"].error {
   @apply border border-white
 }
 
+.btn.md {
+  @apply text-[2rem];
+}
+
 .btn.lg {
   @apply text-2xl;
 }

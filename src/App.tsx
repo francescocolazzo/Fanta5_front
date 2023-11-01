@@ -1,6 +1,6 @@
 import { BrowserRouter } from "react-router-dom";
 import CenterRoutes from "./routes/CenterRoutes";
-import { NavBar } from "@/shared/components/core/index";
+import { NavBar } from "@/shared";
 
 function App() {
   return (

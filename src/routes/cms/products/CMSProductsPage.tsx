@@ -1,7 +1,7 @@
 export function CMSProductsPage() {
     return (
       <div>
-        <h1 className="title">CMS products page</h1>
+        <h1 className="title">PRODUCTS</h1>
       </div>
     );
   }
