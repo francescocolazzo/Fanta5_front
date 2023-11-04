@@ -40,7 +40,7 @@ export function ShopPage() {
   return (
     <div>
       <h1 className="title">SHOP</h1>
-      {pending && <Spinner></Spinner>}
+      {pending && <Spinner/>}
 
       {error && (
         <div className="flex justify-center">
