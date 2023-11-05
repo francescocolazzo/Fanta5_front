@@ -5,20 +5,19 @@ import { useNavigate } from "react-router-dom";
 import { useLogin } from "./hooks/useCheckout";
 
 export function LoginPage() {
+  const navigate = useNavigate();
   const error = useAuth(selectAuthError);
   const isLogged = useAuth(selectAuthIsLogged);
   const login = useAuth((state) => state.login);
-  const navigate = useNavigate();
-
-  const { validators, formData, actions } = useLogin();
-
+  
   useEffect(() => {
     if (isLogged) {
       navigate("/cms");
     }
- 
   }, [isLogged, navigate]);
 
+  const { validators, formData, actions } = useLogin();
+  
   async function doLogin(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     console.log(formData);

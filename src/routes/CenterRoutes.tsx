@@ -1,3 +1,4 @@
+import { PrivateRoute } from "@/shared";
 import { Navigate, Route, Routes } from "react-router-dom";
 import { CartPage, CheckoutPage, CMSOrdersPage, CMSPage, CMSProductsPage, LoginPage, ShopPage, ThanksPage } from '.';
 
@@ -12,7 +13,7 @@ export default function CenterRoutes() {
         <Route path="thankyou" element={<ThanksPage />} />
 
         <Route path="cms" element={<CMSPage />}>
-          <Route path="products" element={<CMSProductsPage />} />
+          <Route path="products" element={<PrivateRoute><CMSProductsPage /></PrivateRoute>} />
           <Route path="orders" element={<CMSOrdersPage />} />
           <Route index element={<Navigate to="products" />} />
         </Route>
