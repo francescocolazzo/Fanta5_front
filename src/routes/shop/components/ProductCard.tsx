@@ -5,7 +5,7 @@ interface ProductCardProps {
   onAddToCart: (product:Partial<Product>) => void;
 }
 
-export default function ProductCard(props: ProductCardProps) {
+export function ProductCard(props: ProductCardProps) {
   const { product: p } = props;
   return (
     <div

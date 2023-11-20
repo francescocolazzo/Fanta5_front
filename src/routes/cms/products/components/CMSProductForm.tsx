@@ -1,9 +1,8 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { ChangeEvent, FormEvent, useEffect, useState } from 'react';
 import { Product } from '@/model/product';
 import clsx from 'clsx';
+import { useCloudinary } from '@/shared';
 
-declare const cloudinary: any;
 export interface CMSProductFormProps {
   activeItem: Partial<Product> | null;
   onClose: () => void;
@@ -18,7 +17,7 @@ const initialState: Partial<Product> = {
 export function CMSProductForm(props: CMSProductFormProps) {
   const [formData, setFormData] = useState(initialState);
   const [dirty, setDirty] = useState<boolean>(false);
-
+  const { openWidget } = useCloudinary();
   useEffect(() => {
     if (props.activeItem?.id) {
       setFormData({ ...props.activeItem })
@@ -44,23 +43,13 @@ export function CMSProductForm(props: CMSProductFormProps) {
   }
 
   function uploadHandler() {
-    const uploadWidget = cloudinary.openUploadWidget(
-      {
-        cloudName: 'dgdmvfytl',
-        uploadPreset: 'ml_default',
-        sources: ['local', 'camera', 'url']
-      },
-      function (error: any, result: any) {
-        console.log(result, error);
-        if (!error && result.event === 'success') {
-          const img = result.info.url;
-          const tmb = result.info.thumbnail_url;
-          setFormData(s => ({ ...s, img, tmb }))
-        }
-      }
-    )
-
-    uploadWidget.open();
+    openWidget()
+      .then(res => {
+        setFormData(s => ({ ...s, ...res }))
+      })
+      .catch(error => {
+        alert(error);
+      })
   }
 
   const isNameValid = formData.name?.length;
