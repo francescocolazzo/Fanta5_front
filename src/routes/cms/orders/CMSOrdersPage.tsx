@@ -9,6 +9,7 @@ export function CMSOrdersPage() {
 
   useEffect(() => {
     getOrders();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

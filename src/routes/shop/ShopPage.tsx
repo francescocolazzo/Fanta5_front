@@ -12,13 +12,8 @@ export function ShopPage() {
 
   useEffect(() => {
     actions.getProducts();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
-  // function addTocart(product: Partial<Product>) {
-  //   console.log(product);
-  //   openCartPanel();
-  //   addTocart(product);
-  // }
 
   return (
     <div>
