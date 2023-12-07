@@ -54,7 +54,7 @@ export function LoginPage() {
         </button>
       </form>
 
-      <pre>{JSON.stringify(formData, null, 2)}</pre>
+      {/* <pre>{JSON.stringify(formData, null, 2)}</pre> */}
     </div>
   );
 }

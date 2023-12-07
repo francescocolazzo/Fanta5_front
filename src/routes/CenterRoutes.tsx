@@ -12,8 +12,8 @@ export default function CenterRoutes() {
         <Route path="login" element={<LoginPage />} />
         <Route path="thankyou" element={<ThanksPage />} />
 
-        <Route path="cms" element={<CMSPage />}>
-          <Route path="products" element={<PrivateRoute><CMSProductsPage /></PrivateRoute>} />
+        <Route path="cms" element={<PrivateRoute><CMSPage /></PrivateRoute>}>
+          <Route path="products" element={<CMSProductsPage />} />
           <Route path="orders" element={<CMSOrdersPage />} />
           <Route index element={<Navigate to="products" />} />
         </Route>
